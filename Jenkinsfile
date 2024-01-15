@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs '14' // Change the version as needed
+        nodejs 'nodeJS' // Change the version as needed
     }
 
     stages {
