@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git 'https://github.com/Maciavelli/cicd-pipeline.git'
+                git branch: 'main', url: 'https://github.com/Maciavelli/cicd-pipeline.git'
             }
         }
 
