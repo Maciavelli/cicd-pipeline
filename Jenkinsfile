@@ -15,6 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
+                sh 'chmod +x scripts/build.sh'
                 sh 'scripts/build.sh'
             }
         }
