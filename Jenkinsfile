@@ -38,7 +38,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                   sh 'usermod -aG docker jenkins'
+                   
                     sh 'docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} .'
                 }
             }
