@@ -9,6 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
+         sh 'sudo usermod -aG docker jenkins'
          sh 'chmod +x scripts/build.sh'
          sh 'scripts/build.sh'
       }
