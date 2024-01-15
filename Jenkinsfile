@@ -1,21 +1,22 @@
 pipeline {
-  agent any
-  tools { nodejs "nodejs" }
+    agent any
 
-  stages {
-    stage('Git checkout') {
-      steps {
-        git branch: 'main', url: 'https://github.com/Maciavelli/cicd-pipeline.git'
-      }
+    tools {
+        nodejs '14' // Change the version as needed
     }
 
-    stage('Build') {
-      steps {
-         sh 'npm install'
-         sh 'chmod +x scripts/build.sh'
-         sh 'scripts/build.sh'
-      }
-    }
+    stages {
+        stage('Git checkout') {
+            steps {
+                git 'https://github.com/Maciavelli/cicd-pipeline.git'
+            }
+        }
 
-  }
+        stage('Build') {
+            steps {
+                sh 'npm install'
+                sh 'scripts/build.sh'
+            }
+        }
+    }
 }
