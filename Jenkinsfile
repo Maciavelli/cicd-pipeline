@@ -38,6 +38,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
+                    sh 'docker -v'
                     sh 'docker build -t epam:v1 .'
                 }
             }
