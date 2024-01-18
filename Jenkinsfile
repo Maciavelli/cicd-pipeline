@@ -38,9 +38,6 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    sh 'su -'
-                    sh 'apk --no-cache add shadow'
-                    sh 'usermod -aG docker jenkins'
                     sh 'docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} .'
                 }
             }
